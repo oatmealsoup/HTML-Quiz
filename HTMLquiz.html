@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JavaScript Quiz App</title>
-  <link rel="stylesheet" href="styles.css">
+<title>Crash Quiz</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Quiz App</h1>
-    <div id="quiz"></div>
-    <div id="result" class="result"></div>
-    <button id="submit" class="button">Submit</button>
-    <button id="retry" class="button hide">Retry</button>
-    <button id="showAnswer" class="button hide">Show Answer</button>
-  </div>
-  <script src="script.js"></script>
+
+  <h1>Paragraph Crash Test</h1>
+<p>HTML documents, at least personally, have a maximum paragraph size of 2^26 bytes, exactly, as shown by this function. Hopefully you will agree... Two paragraphs of this size crash the page, but two that are half of the size can load, for some reason I'd like to understand eventually. I adjusted for the paragraph tags by subtracting seven. The function will probably display a maximal ouput if you do not change the inputs. Do not use any input other than the default, unless it is negative, and do not use if you fear a crash. The error code is "invalid string length", so this could be a browser or HTML specific limit...</p>
+  <form>
+    <label for="numParagraphs">Number of Paragraphs:</label>
+    <input type="number" id="numParagraphs" value="1" min="1">
+    <input type="number" value="1" min="0" id="numOver"> Number of characters over the crash limit.</input>
+    <button type="button" onclick="generateParagraphToCrash()">Generate</button>
+  </form>
+
+  <form>
+    <p>Did I make a function to crash the site with paragraphs?</p>
+    <input type="radio" id="q1a" name="q1" value="yes">
+    <label for="q1a">A) Yes</label><br>
+    <input type="radio" id="q1b" name="q1" value="no">
+    <label for="q1b">B) No</label><br>
+    <input type="radio" id="q1c" name="q1" value="maybe">
+    <label for="q1c">C) Maybe</label><br>
+    <input type="radio" id="q1d" name="q1" value="so">
+    <label for="q1d">D) So</label><br>
+
+    <p>The crash value is 2^26+n, where n>1</p>
+    <input type="radio" id="q2a" name="q2" value="yes">
+    <label for="q2a">A) Yes</label><br>
+  </form>
+
+  <script defer>
+   
+function generateParagraphToCrash() {
+  let numParagraphs = parseInt(document.getElementById("numParagraphs").value);
+  let numOver = document.getElementById("numOver")
+  const paragraphSize = Math.pow(2,26)-7;
+  let content = "";
+  for (let i = 0; i < numParagraphs; i++) {
+         let paragraph = "a".repeat(paragraphSize);
+        paragraph += i.toString();
+        content += `<p>${paragraph}</p>`;
+      }
+  document.body.innerHTML += content
+}
+  </script>
+
 </body>
 </html>
