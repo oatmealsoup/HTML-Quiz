@@ -1,1 +1,0 @@
-Do not input a positive number, or use this on an outdated machine. This "quiz" tests the limits of HTML paragraph length, adjusting for the paragraph tags. There is also a radio form quiz as instructed... Created for Humber College's Web Programming and Design course.
