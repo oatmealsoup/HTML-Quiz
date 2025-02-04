@@ -10,7 +10,7 @@
   <form>
     <label for="numParagraphs">Number of Paragraphs:</label>
     <input type="number" id="numParagraphs" value="1" min="1">
-    <input type="number" value="1" min="0" id="numOver"> Number of characters over the crash limit.</input>
+    <input type="number" value="1" min="0" id="numOver"> WARNING! Number of characters over the stable limit (AKA: crash character count).</input>
     <button type="button" onclick="generateParagraphToCrash()">Generate</button>
   </form>
 
@@ -20,10 +20,10 @@
     <label for="q1a">A) Yes</label><br>
     <input type="radio" id="q1b" name="q1" value="no">
     <label for="q1b">B) No</label><br>
-    <input type="radio" id="q1c" name="q1" value="maybe">
+    <input type="radio" id="q1" name="q1" value="maybe">
     <label for="q1c">C) Maybe</label><br>
-    <input type="radio" id="q1d" name="q1" value="so">
-    <label for="q1d">D) So</label><br>
+    <input type="radio" id="q1" name="q1" value="so?">
+    <label for="q1d">D) So?</label><br>
 
     <p>The crash value is 2^26+n, where n>1</p>
     <input type="radio" id="q2a" name="q2" value="yes">
